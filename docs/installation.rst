@@ -84,6 +84,9 @@ For netCDF and IO
 Instructions
 ------------
 
+.. note::
+    If you are reinstalling PTSA please go to `Reinstalling PTSA`_ first and follow the instructions
+
 To download PTSA you can either clone PTSA repository by typing the following from your shell:
 
 .. code-block:: bash
@@ -101,47 +104,49 @@ which will download zipped repository to your machine.
 
 .. note::
     It is a good idea to check the latest version of PTSA
-    using https://github.com/maciekswat/ptsa_new page interface and modify the version of PTSA accordingly.
+    using https://github.com/maciekswat/ptsa_new page interface and replace `<latest_version>` in the checkout call below.
 
-    git checkout <latest_branch>
+    .. code-block:: bash
 
-    Thus instead of typing
+        git checkout <latest_version>
 
-    git checkout ptsa_1.0.0
+    with the most recent version e.g.
 
-    you may type
+    .. code-block:: bash
 
-    git checkout ptsa_1.0.1
-
-    to get the latest version of PTSA
-
-
-so that it checks out latest branch. Subsequent PTSA version branches will be called _ptsa_1.0.1_, _ptsa_1.0.2_, _ptsa_1.1.0_, etc...
+        git checkout ptsa_1.0.1
 
 
 After you downloaded PTSA go to PTSA directory and run the following command
 
-    python setup.py install
+    .. code-block:: bash
 
-This will start the installation process that will involve compilation of fftw library, compilation of c/c++ PTSA extension modules and copying of Python files into '''site-packages''' directory of your python distribution
+        python setup.py install
+
+This will start the installation process that will involve compilation of fftw library,
+compilation of c/c++ PTSA extension modules and copying of Python files into '''site-packages'''
+directory of your python distribution
 
 Assuming everything went OK , at this point you should have PTSA distribution ready to run.
 
 
+.. _`Reinstalling PTSA`:
 
+Reinstalling PTSA
+-------------------
 
-xarray itself is a pure Python package, but its dependencies are not. The
-easiest way to get them installed is to use conda_. You can then install xarray
-with its recommended dependencies with the conda command line tool::
+Before you reinstall PTSA you should remove previous build files (C/C++ compiler outputs). To do so go to
 
-    $ conda install xarray dask netCDF4 bottleneck
+.. code-block:: bash
 
-.. _conda: http://conda.io/
+    <YOUR_COPY_OF_PTSA>/build
 
-If you don't use conda, be sure you have the required dependencies (numpy and
-pandas) installed first. Then, install xarray with pip::
+and remove the directories that begin with
 
-    $ pip install xarray
+.. code-block:: bash
 
-To run the test suite after installing xarray, install
-`py.test <https://pytest.org>`__ and run ``py.test xarray``.
+    lib
+    temp
+
+We will automate this process soon but for now some manual labor is requires
+
