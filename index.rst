@@ -46,7 +46,7 @@ Documentation
    dask
    plotting
    api
-   faq
+   docs/faq
    internals
 
 
