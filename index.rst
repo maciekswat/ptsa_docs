@@ -24,30 +24,6 @@ describing scientific data in widespread use in the Earth sciences:
 .. _netCDF: http://www.unidata.ucar.edu/software/netcdf
 .. _OPeNDAP: http://www.opendap.org/
 
-Documentation
--------------
-
-.. toctree::
-   :maxdepth: 1
-
-   whats-new
-   why-xarray
-   examples
-   installing
-   data-structures
-   indexing
-   computation
-   groupby
-   reshaping
-   combining
-   time-series
-   pandas
-   io
-   dask
-   plotting
-   api
-   faq
-   internals
 
 
 xarray is an evolution of an internal tool developed at `The Climate
